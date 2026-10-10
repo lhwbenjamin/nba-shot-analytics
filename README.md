@@ -1,8 +1,8 @@
-# NBA Spatial Shot Probability Prediction System
+# NBA Spatial Shot Analysis & Playstyle Mapping System
 
-A production-ready data engineering and advanced predictive modeling pipeline designed to calculate highly calibrated individual player shot success probabilities. This system seamlessly fuses raw play-by-play logs with high-fidelity optical tracking metrics, extracts non-linear features using glass-box classifiers, and blends spatial shot zone benchmarks to predict exact shot completion probabilities.
+A production-ready data engineering and advanced spatial analysis pipeline designed to dissect NBA shooting efficiency, evaluate predictive feature dynamics, and profile player tendencies. This system seamlessly fuses raw play-by-play sheets with high-fidelity optical tracking metrics, extracts high-signal tracking variables using glass-box classifiers, and maps multi-dimensional player archetypes onto custom-calibrated shot zone heatmaps.
 
-*Note: This repository represents a self-contained spatial predictive engine. It is architected to clean cross-vendor synchronization anomalies, map tactical shooting baselines, and fuse spatial zone probabilities with contextual tracking variables to output individual player shot success vectors.*
+*Note: This repository represents a complete spatial data pipeline. The feature discovery core (EBM continuous splines) and playstyle baselines (K-Means shot zone heatmaps) are fully operational, paving the way for a final blended predictive framework designed to stack these components together to predict individual player shot success vectors.*
 
 ---
 
@@ -12,7 +12,7 @@ A production-ready data engineering and advanced predictive modeling pipeline de
     *   Fused cross-vendor data, executed strict physical constraint filtering, benchmarked classifiers, and extracted glass-box visual insights.
 *   **Phase 2: Player-Archetype Shot Zone Baseline**
     *   Classified players into 6 unique tactical archetypes using K-Means, verified them via 2D PCA, and mapped absolute shooting efficiencies on a 5-tier high-contrast shot zone heatmap grid.
-*   **Phase 3: Blended Logistic Regression Fusion (In Development)**
+*   **Phase 3: Blended Logistic Regression (In Development)**
     *   Integrating aggregated shot zone baseline metrics with advanced tracking variables into a calibrated inference model.
 
 ---
@@ -119,7 +119,11 @@ To resolve data sparsity, players with ≥ 50 total shots were mapped into 6 dis
 
 ## 4. Spatial Shot Zone Heatmaps
 
-Shot tracking charts are generated using custom-calibrated geometry (corner 3 height at `136.977`, and arc theta limits from `22.132°` to `157.868°`). Efficiencies are mapped using a **5-tier absolute color scale** (🟢 Deep Green ≥ 56% | 🟩 Green 44%-56% | 🟨 Yellow 36%-44% | 🟥 Red 28%-36% | 🔴 Deep Red < 28%).
+By leveraging the foundational court drawing frameworks from [Bradley Fay (py-Goldsberry)](https://github.com/bradleyfay/py-Goldsberry) and [Savvas Tjortjoglou](http://savvastjortjoglou.com/nba-shot-sharts.html), this project applies **custom geometric micro-adjustments** to replicate official NBA court specifications with flawless mathematical accuracy:
+* **Corner Three Lines**: Calibrated to exactly **`136.977`** units high to form a perfect tangent with the arc.
+* **Three-Point Arc Theta**: Formulated precisely from **`22.132°` to `157.868°`** for seamless line intersections.
+
+Efficiencies are mapped using a **5-tier absolute color scale** (🟢 Deep Green ≥ 56% | 🟩 Green 44%-56% | 🟨 Yellow 36%-44% | 🟥 Red 28%-36% | 🔴 Deep Red < 28%).
 
 ### Stephen Curry Shot Chart
 <p align="center">
@@ -136,6 +140,18 @@ Shot tracking charts are generated using custom-calibrated geometry (corner 3 he
   <img src="image/clusters_shot_zone.png" width="100%">
 </p>
 
+### References
+* **Bradley Fay** – [py-Goldsberry Repository (Jupyter Notebook Documentation)](https://github.com/bradleyfay/py-Goldsberry/blob/main/docs/Visualizing%20NBA%20Shots%20with%20py-Goldsberry.ipynb)
+* **Savvas Tjortjoglou** – [How to Create NBA Shot Charts in Python Tutorial](http://savvastjortjoglou.com/nba-shot-sharts.html)
+
+---
+
+## Future Work: NBA Spatial Shot Probability Prediction System 
+
+*The framework below outlines the advanced advanced predictive pipeline currently under active development:*
+
+This upcoming upgrade is designed as a production-ready data engineering and advanced predictive modeling pipeline to calculate highly calibrated individual player shot success probabilities. It seamlessly fuses raw play-by-play logs with high-fidelity optical tracking metrics, extracts non-linear features using glass-box classifiers, and blends spatial shot zone benchmarks to predict exact shot completion probabilities.
+
 ---
 
 ## 📂 Repository Structure
@@ -147,7 +163,6 @@ Shot tracking charts are generated using custom-calibrated geometry (corner 3 he
 ├── zone_stat.ipynb             # Localized shot zone percentage aggregations
 ├── cluster.ipynb               # Player profiling & K-Means modeling
 ├── heatmap.ipynb               # Shot zone heatmap
-├── shot_prediction.ipynb       # Blended Logistic Regression shot probability predictor
 ├── README.md
 └── requirements.txt
 ```
