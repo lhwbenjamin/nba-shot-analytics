@@ -1,0 +1,8 @@
+pandas~=3.0.6
+numpy~=2.2.3
+scikit-learn~=1.6.1
+matplotlib~=3.10.0
+seaborn~=0.13.2
+interpret~=0.7.8
+xgboost~=3.0.1
+nba_api~=1.11.4
