@@ -1,9 +1,13 @@
 #Data
 others/
 data/*.csv
+new_image/
 
 #Developing
 shot_prediction.ipynb
+xgboosttesting.ipynb
+pipeline.ipynb
+model_ebm.py
 
 #Python
 __pycache__/
