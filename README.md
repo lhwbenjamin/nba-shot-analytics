@@ -47,9 +47,9 @@ Model interpretability is a strict system constraint. We benchmarked an **XGBoos
 
 | Metric | XGBoost (Black-Box) | EBM (Glass-Box) | Strategic Winner |
 | :--- | :---: | :---: | :---: |
-| **Classification Accuracy** | **65.16%** | 64.95% | **XGB (+0.21%)** |
-| **Area Under ROC (ROC-AUC)** | 0.6847 | **0.6954** | **EBM (+0.0107)** |
-| **Logarithmic Loss (LogLoss)** | 0.6187 | **0.6161** | **EBM (Lower is Better)** |
+| **Classification Accuracy** | 65.16% | **65.83%** | **EBM (+0.67%)** |
+| **Area Under ROC (ROC-AUC)** | 0.6847 | **0.6928** | **EBM (+0.0081)** |
+| **Logarithmic Loss (LogLoss)** | 0.6187 | **0.6140** | **EBM (Lower is Better)** |
 
 ---
 
@@ -160,8 +160,7 @@ This upcoming upgrade is designed as a production-ready data engineering and adv
 ├── image/
 ├── data_processing.ipynb       # Feature engineering prototyping notebook
 ├── data_processing.py          # Production module for data cleaning & interactions
-├── model_xgboost.py            # XGBoost training core with SHAP explanations
-├── model_ebm.py                # Explainable Boosting Machine glass-box model core
+├── model_xgboost_ebm.py        # XGBoost training core & EBM model core
 ├── model_benchmarks.ipynb      # XGBoost vs. EBM machine learning benchmarks
 ├── pipeline.ipynb              # Main orchestration panel running multi-model experiments
 ├── zone_stat.ipynb             # Localized shot zone percentage aggregations
