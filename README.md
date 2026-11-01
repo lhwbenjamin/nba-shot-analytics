@@ -12,8 +12,8 @@ A production-ready data engineering and advanced spatial analysis pipeline desig
     *   Fused cross-vendor data, executed strict physical constraint filtering, benchmarked classifiers, and extracted glass-box visual insights.
 *   **Phase 2: Player-Archetype Shot Zone Baseline**
     *   Classified players into 6 unique tactical archetypes using K-Means, verified them via 2D PCA, and mapped absolute shooting efficiencies on a 5-tier high-contrast shot zone heatmap grid.
-*   **Phase 3: Blended Logistic Regression (In Development)**
-    *   Integrating aggregated shot zone baseline metrics with advanced tracking variables into a calibrated inference model.
+*   **Phase 3: Blended Machine Learning Calibration (In Development)**
+    *   Integrating aggregated shot zone baseline metrics with advanced tracking variables into calibrated Explainable Boosting Machine (EBM) and regularized XGBoost inference frameworks.
 
 ---
 
@@ -47,9 +47,9 @@ Model interpretability is a strict system constraint. We benchmarked an **XGBoos
 
 | Metric | XGBoost (Black-Box) | EBM (Glass-Box) | Strategic Winner |
 | :--- | :---: | :---: | :---: |
-| **Classification Accuracy** | 64.20% | **64.95%** | **EBM (+0.75%)** |
-| **Area Under ROC (ROC-AUC)** | 0.6833 | **0.6954** | **EBM (+0.0121)** |
-| **Logarithmic Loss (LogLoss)** | 0.6257 | **0.6161** | **EBM (Lower is Better)** |
+| **Classification Accuracy** | **65.16%** | 64.95% | **XGB (+0.21%)** |
+| **Area Under ROC (ROC-AUC)** | 0.6847 | **0.6954** | **EBM (+0.0107)** |
+| **Logarithmic Loss (LogLoss)** | 0.6187 | **0.6161** | **EBM (Lower is Better)** |
 
 ---
 
@@ -158,8 +158,12 @@ This upcoming upgrade is designed as a production-ready data engineering and adv
 ```text
 ├── data/
 ├── image/
-├── data_cleaning.ipynb
+├── data_processing.ipynb       # Feature engineering prototyping notebook
+├── data_processing.py          # Production module for data cleaning & interactions
+├── model_xgboost.py            # XGBoost training core with SHAP explanations
+├── model_ebm.py                # Explainable Boosting Machine glass-box model core
 ├── model_benchmarks.ipynb      # XGBoost vs. EBM machine learning benchmarks
+├── pipeline.ipynb              # Main orchestration panel running multi-model experiments
 ├── zone_stat.ipynb             # Localized shot zone percentage aggregations
 ├── cluster.ipynb               # Player profiling & K-Means modeling
 ├── heatmap.ipynb               # Shot zone heatmap
